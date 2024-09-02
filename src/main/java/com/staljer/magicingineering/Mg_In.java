@@ -63,17 +63,7 @@ public class Mg_In
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.TITANIUM_INGOT);
-            event.accept(ModItems.TITANIUM_RAW);
-            event.accept(ModItems.TITANIUM_NUGGET);
-            event.accept(ModItems.TUNGSTEN_INGOT);
-        }
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
-            event.accept(ModBlocks.TITANIUM_BLOCK);
-            event.accept(ModBlocks.RAW_TITANIUM_BLOCK);
-            event.accept(ModBlocks.TITANIUM_ORE);
-        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

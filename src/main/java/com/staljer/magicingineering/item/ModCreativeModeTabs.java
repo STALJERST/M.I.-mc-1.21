@@ -22,6 +22,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TITANIUM_RAW.get());
                         output.accept(ModItems.TITANIUM_NUGGET.get());
                         output.accept(ModItems.TUNGSTEN_INGOT.get());
+                        output.accept(ModItems.MORPH.get());
 
                     }).build());
 

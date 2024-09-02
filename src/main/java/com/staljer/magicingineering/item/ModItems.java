@@ -1,6 +1,7 @@
 package com.staljer.magicingineering.item;
 
 import com.staljer.magicingineering.Mg_In;
+import com.staljer.magicingineering.item.custom.MorphItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -19,6 +20,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TUNGSTEN_INGOT = ITEMS.register("tungsten_ingot",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MORPH = ITEMS.register("morph",
+            () -> new MorphItem(new Item.Properties().durability(32)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

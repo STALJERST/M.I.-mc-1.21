@@ -21,7 +21,7 @@ public class ModItems {
     public static final RegistryObject<Item> TUNGSTEN_INGOT = ITEMS.register("tungsten_ingot",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MORPH = ITEMS.register("morph",
-            () -> new MorphItem(new Item.Properties().durability(32)));
+            () -> new MorphItem(new Item.Properties().durability(8)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

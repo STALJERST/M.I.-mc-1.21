@@ -14,7 +14,7 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Mg_In.MOD_ID);
 
-    public static final RegistryObject<CreativeModeTab> ALEXANDRITE_ITEMS_TAB = CREATIVE_MODE_TABS.register("mi_resurses",
+    public static final RegistryObject<CreativeModeTab> RESURSES = CREATIVE_MODE_TABS.register("mi_resurses",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.TITANIUM_RAW.get()))
                     .title(Component.translatable("creativetab.magicingineering.mi_resurses"))
                     .displayItems((itemDisplayParameters, output) -> {
@@ -22,20 +22,25 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TITANIUM_RAW.get());
                         output.accept(ModItems.TITANIUM_NUGGET.get());
                         output.accept(ModItems.TUNGSTEN_INGOT.get());
+                        output.accept(ModItems.TUNGSTEN_NUGGET.get());
+                        output.accept(ModItems.TUNGSTEN_RAW.get());
                         output.accept(ModItems.MORPH.get());
 
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> ALEXANDRITE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("mi_blocks",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.TITANIUM_ORE.get()))
-                    .withTabsBefore(ALEXANDRITE_ITEMS_TAB.getId())
+                    .withTabsBefore(RESURSES.getId())
                     .title(Component.translatable("creativetab.magicingineering.mi_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.TITANIUM_BLOCK.get());
                         output.accept(ModBlocks.RAW_TITANIUM_BLOCK.get());
                         output.accept(ModBlocks.TITANIUM_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_TITANIUM_ORE.get());
-
+                        output.accept(ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get());
+                        output.accept(ModBlocks.TUNGSTEN_ORE.get());
+                        output.accept(ModBlocks.TUNGSTEN_BLOCK.get());
+                        output.accept(ModBlocks.RAW_TUNGSTEN_BLOCK.get());
                     }).build());
 
 

@@ -3,6 +3,11 @@
   "values": [
     "magicingineering:titanium_block",
     "magicingineering:raw_titanium_block",
-    "magicingineering:titanium_ore"
+    "magicingineering:titanium_ore",
+    "magicingineering:deepslate_titanium_ore",
+    "magicingineering:tungsten_block",
+    "magicingineering:raw_tungsten_block",
+    "magicingineering:tungsten_ore",
+    "magicingineering:deepslate_tungsten_ore"
   ]
 }

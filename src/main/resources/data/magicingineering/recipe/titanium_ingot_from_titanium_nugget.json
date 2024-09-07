@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "A": {
-      "item": "magicingineering:titanium_ingot"
+      "item": "magicingineering:titanium_nugget"
     }
   },
   "pattern": [
@@ -13,6 +13,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "magicingineering:titanium_block"
+    "id": "magicingineering:titanium_ingot"
   }
 }

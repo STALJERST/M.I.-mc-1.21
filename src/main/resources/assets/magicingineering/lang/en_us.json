@@ -3,12 +3,16 @@
   "item.magicingineering.titanium_raw": "Raw titan",
   "item.magicingineering.titanium_nugget": "Titan nugget",
   "item.magicingineering.tungsten_ingot": "Tungsten nugget",
-  "item.magicingineering.morph": "Morph tool",
+  "item.magicingineering.morph": "Morph powder",
 
   "block.magicingineering.titanium_block": "Titanium block",
   "block.magicingineering.raw_titanium_block": "Raw Titanium block",
   "block.magicingineering.titanium_ore": "Titanium ore",
+  "block.magicingineering.deapslate_titanium_ore": "Deepslate Titanium ore",
 
   "creativetab.magicingineering.mi_resurses": "M.I. resurses",
-  "creativetab.magicingineering.mi_blocks": "M.I. blocks"
+  "creativetab.magicingineering.mi_blocks": "M.I. blocks",
+
+  "tooltipe:magicingineering.morph.shift_sown": "Turns iron into titanium",
+  "tooltip.magicingineering.morph": "Press shift to see details"
 }

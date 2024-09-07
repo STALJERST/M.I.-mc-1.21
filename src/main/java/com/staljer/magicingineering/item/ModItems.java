@@ -2,11 +2,17 @@ package com.staljer.magicingineering.item;
 
 import com.staljer.magicingineering.Mg_In;
 import com.staljer.magicingineering.item.custom.MorphItem;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.LinkedHashMap;
+import java.util.List;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =

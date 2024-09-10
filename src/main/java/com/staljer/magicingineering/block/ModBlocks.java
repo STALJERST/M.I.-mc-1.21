@@ -5,6 +5,8 @@ import com.staljer.magicingineering.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CocoaBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -43,6 +45,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> TUNGSTEN_ORE = registerBlock("tungsten_ore",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(3f).requiresCorrectToolForDrops()));
+
+    /*public static final RegistryObject<Block> CONVERTER = registerBlock("converter",
+            () -> new CocoaBlock(BlockBehaviour.Properties.of()
+                    .strength(5f).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));*/
+
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

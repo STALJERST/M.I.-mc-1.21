@@ -38,6 +38,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.TUNGSTEN_ORE.get());
         dropSelf(ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get());
         dropSelf(ModBlocks.DEEPSLATE_TITANIUM_ORE.get());
+        dropSelf(ModBlocks.PALLADIUM_BLOCK.get());
+        dropSelf(ModBlocks.PALLADIUM_ORE.get());
+        dropSelf(ModBlocks.DEEPSLATE_PALLADIUM_ORE.get());
+        dropSelf(ModBlocks.RAW_PALLADIUM_BLOCK.get());
+        //dropSelf(ModBlocks.CONVERTER.get());
 
 
         this.add(ModBlocks.TITANIUM_ORE.get(),
@@ -48,6 +53,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createOreDrop(ModBlocks.TUNGSTEN_ORE.get(), ModItems.TUNGSTEN_RAW.get()));
         this.add(ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get(),
                 block -> createMultipleOreDrops(ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get(), ModItems.TUNGSTEN_RAW.get(), 2, 6));
+        this.add(ModBlocks.PALLADIUM_ORE.get(),
+                block -> createOreDrop(ModBlocks.PALLADIUM_ORE.get(), ModItems.PALLADIUM_RAW.get()));
+        this.add(ModBlocks.DEEPSLATE_PALLADIUM_ORE.get(),
+                block -> createMultipleOreDrops(ModBlocks.DEEPSLATE_PALLADIUM_ORE.get(), ModItems.PALLADIUM_RAW.get(), 2, 6));
     }
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {
         HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);

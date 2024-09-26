@@ -10,6 +10,8 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static final class Blocks {
+        public static final TagKey<Block> NEEDS_ULTIMATE_TOOL = createTag("needs_ultimate_tool");
+        public static final TagKey<Block> INCORRECT_FOR_ULTIMATE_TOOL = createTag("incorrect_for_ultimate_tool");
 
 
         private static TagKey<Block> createTag(String name){
@@ -18,6 +20,8 @@ public class ModTags {
     }
 
     public static final class Items {
+
+
 
         private static TagKey<Item> createTag(String name){
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Mg_In.MOD_ID,name));

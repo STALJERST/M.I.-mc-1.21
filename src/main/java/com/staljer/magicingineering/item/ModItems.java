@@ -1,10 +1,13 @@
 package com.staljer.magicingineering.item;
 
 import com.staljer.magicingineering.Mg_In;
+import com.staljer.magicingineering.item.custom.HammerItem;
+import com.staljer.magicingineering.item.custom.ModToolTiers;
 import com.staljer.magicingineering.item.custom.MorphItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -32,6 +35,16 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TUNGSTEN_RAW = ITEMS.register("tungsten_raw",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PALLADIUM_RAW = ITEMS.register("palladium_raw",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PALLADIUM_NUGGET = ITEMS.register("palladium_nugget",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PALLADIUM_INGOT = ITEMS.register("palladium_ingot",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> ULTIMATE_PICKAXE = ITEMS.register("ultimate_pickaxe",
+            () -> new HammerItem(ModToolTiers.ULTIMATE,new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.ULTIMATE,20,10))));
 
 
     public static void register(IEventBus eventBus){

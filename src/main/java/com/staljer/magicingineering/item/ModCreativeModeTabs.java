@@ -24,11 +24,15 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TUNGSTEN_INGOT.get());
                         output.accept(ModItems.TUNGSTEN_NUGGET.get());
                         output.accept(ModItems.TUNGSTEN_RAW.get());
+                        output.accept(ModItems.PALLADIUM_INGOT.get());
+                        output.accept(ModItems.PALLADIUM_NUGGET.get());
+                        output.accept(ModItems.PALLADIUM_RAW.get());
                         output.accept(ModItems.MORPH.get());
+                        output.accept(ModItems.ULTIMATE_PICKAXE.get());
 
                     }).build());
 
-    public static final RegistryObject<CreativeModeTab> ALEXANDRITE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("mi_blocks",
+    public static final RegistryObject<CreativeModeTab> BLOCKS_TAB = CREATIVE_MODE_TABS.register("mi_blocks",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.TITANIUM_ORE.get()))
                     .withTabsBefore(RESURSES.getId())
                     .title(Component.translatable("creativetab.magicingineering.mi_blocks"))
@@ -41,6 +45,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.TUNGSTEN_ORE.get());
                         output.accept(ModBlocks.TUNGSTEN_BLOCK.get());
                         output.accept(ModBlocks.RAW_TUNGSTEN_BLOCK.get());
+                        output.accept(ModBlocks.DEEPSLATE_PALLADIUM_ORE.get());
+                        output.accept(ModBlocks.PALLADIUM_ORE.get());
+                        output.accept(ModBlocks.PALLADIUM_BLOCK.get());
+                        output.accept(ModBlocks.RAW_PALLADIUM_BLOCK.get());
+//                        output.accept(ModBlocks.CONVERTER.get());
                     }).build());
 
 

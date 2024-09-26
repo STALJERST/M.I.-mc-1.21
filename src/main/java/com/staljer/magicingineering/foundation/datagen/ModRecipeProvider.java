@@ -24,6 +24,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModBlocks.TITANIUM_ORE.get(), ModBlocks.DEEPSLATE_TITANIUM_ORE.get());
         List<ItemLike> TUNGSTEN_SMELTABLES = List.of(ModItems.TUNGSTEN_RAW.get(),
                 ModBlocks.TUNGSTEN_ORE.get(), ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get());
+        List<ItemLike> PALLADIUM_SMELTABLES = List.of(ModItems.PALLADIUM_RAW.get(),
+                ModBlocks.PALLADIUM_ORE.get(), ModBlocks.DEEPSLATE_PALLADIUM_ORE.get());
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.TITANIUM_BLOCK.get())
                 .pattern("AAA")
@@ -69,8 +71,27 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.RAW_TUNGSTEN_BLOCK.get())
                 .unlockedBy(getHasName(ModBlocks.RAW_TUNGSTEN_BLOCK.get()), has(ModBlocks.RAW_TUNGSTEN_BLOCK.get())).save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RAW_PALLADIUM_BLOCK.get())
+                .pattern("AAA")
+                .pattern("AAA")
+                .pattern("AAA")
+                .define('A', ModItems.PALLADIUM_RAW.get())
+                .unlockedBy(getHasName(ModItems.PALLADIUM_RAW.get()), has(ModItems.PALLADIUM_RAW.get())).save(pRecipeOutput);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PALLADIUM_RAW.get(), 9)
+                .requires(ModBlocks.RAW_PALLADIUM_BLOCK.get())
+                .unlockedBy(getHasName(ModBlocks.RAW_PALLADIUM_BLOCK.get()), has(ModBlocks.RAW_PALLADIUM_BLOCK.get())).save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.PALLADIUM_BLOCK.get())
+                .pattern("AAA")
+                .pattern("AAA")
+                .pattern("AAA")
+                .define('A', ModItems.PALLADIUM_INGOT.get())
+                .unlockedBy(getHasName(ModItems.PALLADIUM_INGOT.get()), has(ModItems.PALLADIUM_INGOT.get())).save(pRecipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PALLADIUM_INGOT.get(), 9)
+                .requires(ModBlocks.PALLADIUM_BLOCK.get())
+                .unlockedBy(getHasName(ModBlocks.PALLADIUM_BLOCK.get()), has(ModBlocks.PALLADIUM_BLOCK.get())).save(pRecipeOutput);
 
 
 
@@ -85,7 +106,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreBlasting(pRecipeOutput, TITANIUM_SMELTABLES, RecipeCategory.MISC, ModItems.TITANIUM_INGOT.get(), 0.25f, 100, "mi_blocks");
         oreSmelting(pRecipeOutput, TUNGSTEN_SMELTABLES, RecipeCategory.MISC, ModItems.TUNGSTEN_INGOT.get(), 0.25f, 200, "mi_blocks");
         oreBlasting(pRecipeOutput, TUNGSTEN_SMELTABLES, RecipeCategory.MISC, ModItems.TUNGSTEN_INGOT.get(), 0.25f, 100, "mi_blocks");
-
+        oreSmelting(pRecipeOutput, PALLADIUM_SMELTABLES, RecipeCategory.MISC, ModItems.PALLADIUM_INGOT.get(), 0.25f, 200, "mi_blocks");
+        oreBlasting(pRecipeOutput, PALLADIUM_SMELTABLES, RecipeCategory.MISC, ModItems.PALLADIUM_INGOT.get(), 0.25f, 100, "mi_blocks");
 
     }
 

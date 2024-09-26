@@ -3,6 +3,7 @@ package com.staljer.magicingineering;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+/*import com.staljer.magicingineering.foundation.block.entity.ModBlockEntities;*/
 import com.mojang.logging.LogUtils;
 import com.staljer.magicingineering.block.ModBlocks;
 import com.staljer.magicingineering.item.ModCreativeModeTabs;
@@ -41,7 +42,7 @@ public class Mg_In
 
         ModCreativeModeTabs.register(modEventBus);
 
-
+        /*ModBlockEntities.register(modEventBus);*/
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);

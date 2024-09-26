@@ -6,7 +6,12 @@
   "item.magicingineering.tungsten_nugget": "Tungsten nugget",
   "item.magicingineering.tungsten_raw": "Raw tungsten",
   "item.magicingineering.morph": "Morph powder",
+  "item.magicingineering.palladium_ingot": "Palladium ingot",
+  "item.magicingineering.palladium_nugget": "Palladium nugget",
+  "item.magicingineering.palladium_raw": "Raw Palladium",
+  "item.magicingineering.ultimate_pickaxe": "Ultimate pickaxe",
 
+  //"block.magicingineering.converter": "Converter",
   "block.magicingineering.titanium_block": "Titanium block",
   "block.magicingineering.raw_titanium_block": "Raw Titanium block",
   "block.magicingineering.titanium_ore": "Titanium ore",
@@ -15,6 +20,10 @@
   "block.magicingineering.raw_tungsten_block": "Raw Tungsten block",
   "block.magicingineering.tungsten_ore": "Tungsten ore",
   "block.magicingineering.deepslate_tungsten_ore": "Deepslate Tungsten ore",
+  "block.magicingineering.palladium_block": "Palladium block",
+  "block.magicingineering.raw_palladium_block": "Raw Palladium block",
+  "block.magicingineering.palladium_ore": "Palladium ore",
+  "block.magicingineering.deepslate_palladium_ore": "Deepslate Palladium ore",
 
   "creativetab.magicingineering.mi_resurses": "M.I. resurses",
   "creativetab.magicingineering.mi_blocks": "M.I. blocks",

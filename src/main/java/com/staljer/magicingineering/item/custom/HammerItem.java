@@ -1,21 +1,30 @@
 package com.staljer.magicingineering.item.custom;
 
+import com.staljer.magicingineering.foundation.datagen.ModBlockTagProvider;
+import com.staljer.magicingineering.foundation.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.DiggerItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class HammerItem extends DiggerItem {
+    private static final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+
     public HammerItem(Tier pTier, Properties pProperties) {
-        super(pTier, BlockTags.MINEABLE_WITH_PICKAXE, pProperties);
+        super(pTier, ModTags.Blocks.MINEABLE_WITH_HAMMER, pProperties);
     }
 
     public static List<BlockPos> getBlocksToBeDestroyed(int range, int depth, BlockPos initialBlockPos, ServerPlayer player) {
@@ -29,26 +38,39 @@ public class HammerItem extends DiggerItem {
         }
 
         Direction direction = traceResult.getDirection();
-        for (int x = -range; x <= range; x++) {
-            for (int y = -range; y <= range; y++) {
-                for (int z = 0; z <= depth; z++) {
+        for (int z = 0; z <= depth; z++) {
+            List<BlockPos> layerPositions = new ArrayList<>();
+            for (int x = -range; x <= range; x++) {
+                for (int y = -range; y <= range; y++) {
                     if (direction == Direction.DOWN) {
-                        positions.add(new BlockPos(initialBlockPos.getX() + x, initialBlockPos.getY() + z, initialBlockPos.getZ() + y));
+                        layerPositions.add(new BlockPos(initialBlockPos.getX() + x, initialBlockPos.getY() + z, initialBlockPos.getZ() + y));
                     } else if (direction == Direction.UP) {
-                        positions.add(new BlockPos(initialBlockPos.getX() + x, initialBlockPos.getY() - z, initialBlockPos.getZ() + y));
+                        layerPositions.add(new BlockPos(initialBlockPos.getX() + x, initialBlockPos.getY() - z, initialBlockPos.getZ() + y));
                     } else if (direction == Direction.NORTH) {
-                        positions.add(new BlockPos(initialBlockPos.getX() + x, initialBlockPos.getY() + y, initialBlockPos.getZ() + z));
+                        layerPositions.add(new BlockPos(initialBlockPos.getX() + x, initialBlockPos.getY() + y, initialBlockPos.getZ() + z));
                     } else if (direction == Direction.SOUTH) {
-                        positions.add(new BlockPos(initialBlockPos.getX() + x, initialBlockPos.getY() + y, initialBlockPos.getZ() - z));
+                        layerPositions.add(new BlockPos(initialBlockPos.getX() + x, initialBlockPos.getY() + y, initialBlockPos.getZ() - z));
                     } else if (direction == Direction.WEST) {
-                        positions.add(new BlockPos(initialBlockPos.getX() + z, initialBlockPos.getY() + y, initialBlockPos.getZ() + x));
+                        layerPositions.add(new BlockPos(initialBlockPos.getX() + z, initialBlockPos.getY() + y, initialBlockPos.getZ() + x));
                     } else if (direction == Direction.EAST) {
-                        positions.add(new BlockPos(initialBlockPos.getX() - z, initialBlockPos.getY() + y, initialBlockPos.getZ() + x));
+                        layerPositions.add(new BlockPos(initialBlockPos.getX() - z, initialBlockPos.getY() + y, initialBlockPos.getZ() + x));
                     }
                 }
             }
+            destroyLayerWithDelay(layerPositions, player, z * 5000); // Затримка пропорційна глибині
         }
 
         return positions;
+    }
+
+    public static void destroyLayerWithDelay(List<BlockPos> positions, ServerPlayer player, int delay) {
+        scheduler.schedule(() -> {
+            for (BlockPos pos : positions) {
+                BlockState state = player.level().getBlockState(pos);
+                if (!state.isAir()) {
+                    player.level().destroyBlock(pos, true, player);
+                }
+            }
+        }, delay, TimeUnit.MILLISECONDS);
     }
 }

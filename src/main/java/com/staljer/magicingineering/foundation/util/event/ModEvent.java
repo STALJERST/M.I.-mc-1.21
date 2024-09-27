@@ -11,12 +11,12 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = Mg_In.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEvent {
     private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
-
 
     @SubscribeEvent
     public static void onHammerUsage(BlockEvent.BreakEvent event) {
@@ -29,7 +29,8 @@ public class ModEvent {
                 return;
             }
 
-            for(BlockPos pos : HammerItem.getBlocksToBeDestroyed(10, 50,initialBlockPos, serverPlayer)) {
+            List<BlockPos> blocksToBeDestroyed = HammerItem.getBlocksToBeDestroyed(25, 51, initialBlockPos, serverPlayer);
+            for(BlockPos pos : blocksToBeDestroyed) {
                 if(pos == initialBlockPos || !hammer.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) {
                     continue;
                 }

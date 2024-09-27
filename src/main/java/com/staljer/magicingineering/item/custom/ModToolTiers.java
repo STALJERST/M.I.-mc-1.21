@@ -7,7 +7,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeTier;
 
 public class ModToolTiers {
-    public static final Tier ULTIMATE = new ForgeTier(20000,2000,15,40,
+    public static final Tier ULTIMATE = new ForgeTier(2000000,2000,150,40,
             ModTags.Blocks.NEEDS_ULTIMATE_TOOL, () -> Ingredient.of(ModItems.TITANIUM_INGOT.get()),
             ModTags.Blocks.INCORRECT_FOR_ULTIMATE_TOOL);
 

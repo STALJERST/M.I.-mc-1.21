@@ -50,5 +50,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .addTags(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
                 .remove(ModTags.Blocks.INCORRECT_FOR_ULTIMATE_TOOL);
 
+        tag(ModTags.Blocks.MINEABLE_WITH_HAMMER)
+                .addTags(BlockTags.MINEABLE_WITH_PICKAXE)
+                .addTags(BlockTags.MINEABLE_WITH_AXE)
+                .addTags(BlockTags.MINEABLE_WITH_SHOVEL);
     }
 }

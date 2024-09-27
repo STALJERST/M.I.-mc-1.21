@@ -5,10 +5,7 @@ import com.staljer.magicingineering.item.custom.HammerItem;
 import com.staljer.magicingineering.item.custom.ModToolTiers;
 import com.staljer.magicingineering.item.custom.MorphItem;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.PickaxeItem;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -44,7 +41,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> ULTIMATE_PICKAXE = ITEMS.register("ultimate_pickaxe",
             () -> new HammerItem(ModToolTiers.ULTIMATE,new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModToolTiers.ULTIMATE,20,10))));
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.ULTIMATE,200,100)))
+    );
 
 
     public static void register(IEventBus eventBus){
